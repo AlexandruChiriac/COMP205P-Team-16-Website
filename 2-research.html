@@ -36,7 +36,7 @@
 											<li><a href="5-testing.html">Testing</a></li>
 											<li><a href="6-evaluation.html">Evaluation</a></li>
 											<li><a href="7-management.html">Management</a></li>
-											
+
 										</ul>
 									</div>
 								</li>
@@ -52,94 +52,51 @@
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h2>The blockchain</h2>
-								<h4>What is the blockchain?</h4>
-								<img src="images/blockchain.pdf" style="width:15%" align="right">
-								<p>A Blockchain is a continuously-growing public ledger which contains records grouped in entities called Blocks. Everyone in the networks has an updated copy of the ledger4, and data cannot be modified or deleted once it’s on the Blockchain1.
+								<h2>The platforms</h2>
+								<h4>Blockchain</h4>
+								<p>Our concept revolves around the idea of eliminating a third party through Blockchain. A Blockchain is a continuously-growing public ledger which contains records grouped in entities called Blocks. Everyone in the network has an updated copy of the ledger, and data cannot be modified or deleted once it’s on the Blockchain. The value of this technology lays in the elimination of a “Central Authority”, and its replacement by all the nodes in the Blockchain network. In fact, a distributed consensus system is in place to confirm that the data which enters the Blockchain is valid, by imposing strict cryptographic rules that are verified by miners.[1]</p>
 
-								The value of this technology lays in the elimination of a “Central Authority”, and its replacement by all the nodes in the Blockchain network. In fact, a distributed consensus system is in place to confirm that the data which enters the Blockchain is valid, by imposing strict cryptographic rules that are verified by miners. By solving a cryptographic puzzle, the latter “wrap a block up” and add it to the Blockchain.
-								The other advantages are many. Here’s some of them:
-								Security: having different copies of the ledger, but not any central one which is trusted more than the others, make it hard to break or hack. Secondly, it’s fast and efficient
-								Reducing transactions costs: Paying a third party is sometimes expensive. Eliminating it means cheaper services
-								Speed and efficiency: Going through third parties takes a long time, and that’s why international transactions can take days for example. Blockchain just needs a few minutes to verify a record it.
-								</p>
+								<p>The advantages of Blockchain>
+								<p>The most important advantages of Blockchain are security and efficiency. First, having different copies of the ledger, but not any central one which is trusted more than the others, makes it hard to break or hack. Secondly, going through third parties takes a long time, and that’s why international transactions can take days for example. Blockchain just needs a few minutes to verify a record it. Lastly, involving a third party can be very expensive while Blockchain only requires some very minimal operating costs.</p>
 
-								<h4>Applications</h4>
-								<p>The applications of the Blockchain are very diverse, and since the technology is still at the beginning of its rise, many new applications are expected to come surface.
+								<p>Why does Blockchain fit our project?<p>
+								<p>We believe that currently, the notarisation process is long, tedious and quite expensive, even more so when thinking about documents that need to be exchanged between parties from different countries. A blockchain based notary application would fit perfectly in this scenario to make the process go a lot faster, cheaply. Just as Bitcoin transactions can be verified using Blockchain, so can documents be authenticated via the same means.</p>
 
-								The most popular application is Bitcoins, a cryptocurrency which we are going to explain later. However, Blockchain can also be handy in dealing with smart contracts, which content happens automatically when the conditions are met. Voting, fair trade, ownership are other fields where Blockchain can be useful.</p>
-								<a href=" http://blogs.wsj.com/cio/2016/02/02/cio-explainer-what-is-blockchain/"></a>
-								<a href="https://bitcoin.org/en/how-it-works"></a>
-								<a href="https://en.wikipedia.org/wiki/Blockchain_(database)"></a>
-								<a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/492972/gs-16-1-distributed-ledger-technology.pdf"></a>
-
-
-								<h2>Legacy</h2>
-								<h4>The APIs</h4>
-								<p><b>Proof of Existence-</b> is an API that allows us to store documents anonymously, the document itself is not stored in their database or the blockchain it is its digest that is saved with a timestamp this allows to prove that a document existed at a specific time. The API works uses the SHA256 algorithm to generate a hash and OP_RETURN, “This is a bitcoin scripting opcode that marks the transaction output as provably unspendable and allows a small amount of data to be inserted”. When a transaction is confirmed it is sure that the document exist at the time the transaction is confirmed, otherwise the digest (hash) of the document could not have been included in the transaction.
-								<a href="https://proofofexistence.com/about">proofofexistence.com</a></p>
-								<p><b>CoinSecrets-</b> is an API that allows retrieving OP_RETURN transactions from the blockchain. To retrieve this information you have to use HTTP GET to one of URLs provided on the CoinSecrets website. The result is in JSON format “the top-level object of the response will contain height and timestamp fields, which indicate the requested block height and the timestamp inside that block header.”</p>
-								<p><b>Blockchain-</b> is also an API used to retrieve transactions and can be used to retrieve OP_RETURN transactions </p>
-								<p><b>HelloSign-</b> is an API that allows sending a request to sign documents either by embedding the document directly on our website or by using their platform. They claim that:
-								“Security comes first. All of your documents are kept private utilizing 256 bit SSL encryption both in transfer and at rest. Also, we're compliant with all major eSignature laws, including ESIGN, UETA, European Union eIDAS (EU No.910/2014). Additionally, all access is over HTTPS and all documents are encrypted at rest.”</p>
-
-								<h2>Tools: What can we use?</h2>
-								<img src="images/bitcoin.png" style="width:15%" align="right">
-								<h4>Bitcoins</h4>
-								<b>What is it?</b>
-								<p>Bitcoin is a cryptographic currency; it is a payment system that allows making transactions directly without getting a third party involved in the exchange. In other words, it is a peer-to-peer connection. The transactions are stored in the blockchain, which verifies that the money is not in two hands at once. The system works without a central unit or a unique administrator : it is decentralized. </p>
-								<b>How does it work?</b>
-								<p>The primordial function of the system is to check the validity of the transaction and to write them in an indelible manner in a public file called the blockchain, where they are made visible to all but protected of any modification. This is made possible in two steps. First, miners check the payments by creating blocks of transactions and then solving a mathematical puzzle that generates a hash, which is stored with the block. Each hash is unique; changing just one character in a block will change the hash completely. Then, each miner adds this new block to his local version of the blockchain after verifying all the transactions contained in it and their coherence with all the transactions already stored.  If a transaction is faked then when “someone checked the block’s authenticity by running the hashing function on it, they’d find that the hash was different from the one already stored along with that block in the blockchain. The block would be instantly spotted as a fake.” [1].</p>
-								<a href="1-	http://www.coindesk.com/information/how-bitcoin-mining-works/"></a>
-								<b>How can we use it?</b>
-								<p>
-								An interesting functionality to used is related to OP_RETURN. OP_RETURN is a valid opcode that allows to store 80 bytes in a bitcoin transaction. However, the byte count was reduced to only 40 bytes in 2014 and this method is subject to many debates because many people are against the idea of using the bitcoin blockchain to store information other than monetary transaction.
-								</br>
-								“An OP_Return is a opcode, and the message you write inside is like writing a message in digital ink on a world wide spreadsheet.” </br>
-								There are many tutorials online that shows how to use op_return. We tried to follow one posted by Justin Guy that uses Bitcoin Core and Pycoin. After installing bitcoin we have to wait a couple of minutes in order to get the latest block created. Then, we had to manually use a private key to make a transaction, which is not recommended but is done only in the context of the experiment. The transaction is made to the address created this is done by downloading a github code at: https://gist.githubusercontent.com/harding/d34b581d8cfbb8919812/raw/send-op-return.py
-								</p>
-
+								<h4>Bitcoin</h4>
+								<p>Bitcoin is a cryptographic currency; it is a payment system that allows making transactions directly without getting a third party involved in the exchange. In other words, it is a peer-to-peer connection. The transactions are stored in the blockchain, which verifies that the money is not in two hands at once. The system works without a central unit or a unique administrator: it is decentralized.[2]</p>
 
 								<h4>Ethereum</h4>
-								<img src="images/ethereum.png" style="width:15%" align="right">
-								<p>Ethereum is a public blockchain-based distributed computing platform, featuring smart contract functionality. Let's see how we can use smart contracts.</p>
-								<b>What are smart contracts?</b>
-								<p>
-									Smart contracts are objects which contain functions and variables, and which can interact with other contracts, make decision, store data, and send ether to others. Contracts are defined by their creators, and stored in the blockchain. Their execution and the services they offer are, however, provided  by the network itself.
-									“A smart contract is a piece of code that is stored on an blockchain, triggered by blockchain transactions and which reads and writes data in that blockchain's database.” [2]
-									Sources: [1] Ethereum.org, [2] http://www.coindesk.com/three-smart-contract-misconceptions/
-								</p>
+								<p>Ethereum is a public blockchain based distributed computing platform, featuring smart contract functionality. Smart contracts are objects which contain functions and variables and which can interact with other contracts, make decisions, store data and send ether (Ethereum cryptocurrency).[3]</p>
 
-								<b>How can they be used for our purpose?</b>
-								<p>Our main purpose is to allow a third party to prove the authenticity of a document.
-								Theoretically, what we want is a contract which contains the document, which the issuing authority signs as a confirmation of authenticity.
-								The automatic consequence of this signature would ideally be sending a proof of authenticity to the parties that need it.</p>
+								<h4>Ehteruems advantages over Bitcoin and why is it suitable for our app</h4>
+								<p>We decided to go with Ethereum because it’s built in smart contract features is way more advantageous for the purpose of our system. Through smart contracts, we can authenticate the signatures on a document.</p>
 
+								<h2>Potential programming languages, libraries, apis, strengths and weaknesses, what did we choose and why<h2>
 
-								<p>
-									<b>TestPRC</b></br>
-									When developing a Truffle-based application, we recommend using the EthereumJS TestRPC. It's a complete blockchain-in-memory that runs only on your development machine. It processes transactions instantly instead of waiting for the default block time -- so you can test that your code works quickly -- and it tells you immediately when your smart contracts run into errors. It also makes a great client for automated testing, and Truffle knows how to use its special features to speed up test runtime by almost 90%.
-								</p>
+								<h4>MeteorJS, an alternative to Node</h4>
+								<p>We decided to use MeteorJS as the main development platform. Meteor is a new technology which functions as a full stack platform, offering simplicity, speed and reactivity. Meteor’s built in package system made it very easy to add additional items to our system such as user accounts through the accounts-ui and accounts-password packages, a documents database through collectionFS, all just by typing in a few commands on the terminal.[4]</p>
 
-							</br></br>
+								<h4>Truffle - Ethereum development framework</h4>
+								<p>While reading through the forums for an Ethereum development environment, we quickly discovered that Truffle was suggested by many as being the leading technology when it comes to developing and deploying smart contracts, and, therefore, it became our ethereum framework of choice.[5]</p>
 
+								<h4>HTML5, CSS3, Javascript - The Front End</h4>
+								<p>We decided to stick with the basics of front end development to not overcomplicate the scope of our project. During development, we also tried using ReactJS, but after a while we ended up dropping it because of the multitude of issues that it caused in relation to routing, document uploading and others. Firstly, Reacts capabilities proved promising, but given the fact that Meteor is a relatively new platform and so is React, some conflicting issues made us decided to stick with basic Javascript</p>
 
-								<h2>Testing</h2>
-								<p>Several ethereum development frameworks exist : these facilitate the testing, debugging, and deployment of an ethereum application. Let’s see how testing can be done.
-								P.S. We will clearly be using Blockchain testnets during our development and testing phases.</p>
-								<h4>Automated testing for ethereum</h4>
-								<p>Truffle is a platform that compiles, deploys and handles interfacing with contracts.
-								Truffle uses the Mocha testing framework for automated testing (unit and integration) and Chai for assertions, in order to create a smooth testing environment.
+								<h4>MongoDB with CollectionFS - The Back End</h4>
+								<p>The Meteor platform has a built in mini-mongo database system, so it was easy for us to make use of it out of the box. CollectionFS is a meteor package/library that enabled us to upload and view documents in the MongoDB instance created from the start of the application.[6]</p>
 
-								Here’s an example provided by Truffle’s documentation.  This will tell Truffle (and Mocha) to deploy your contracts  [and then run the test specified in the it() block.
-								</p>
-								<img src="images/truffletesting.png" style="width:50%;">
-								<h4>Testing for bitcoin</h4>
-								<p>Bitcoinj is a library for working with bitcoins. It provides a TestUtils class that can do things like manufacture fake Transaction objects and so on. However, although Unit tests are a good way to build robustness in a software, and due to the many subtle complexities of the Bitcoin protocol, they’re not always sufficient to ensure things work correctly. That’s why it’s better to work with testing frameworks.</p>
-								<h4>Acceptance testing</h4>
-								<p>What we care about, at the end of the day, is the users and the client being satisfied with the project. Hence, an intensive user testing is needed, and we would like to test every functionality as soon as we build it.</p>
-								<br></br>
+								<h2>c. Summary of Final Decision</h2>
+								<p>Our system was developed through the Meteor Javascript platform by making use of the Truffle JS framework for ethereum integration and HTML5, CSS and Javascript for the front end. For the back end, we have opted to use Meteor’s built in MongoDB database using the CollectionFS package. While considering alternatives for the developer platforms we felt that mobile applications are not very often trusted for operations dealing with confidential documents. Therefore we decided to build a web app. </p>
 
+								<h2>d. References</h2>
+								<ol>
+									<li> https://www.blockchain.com/</li>
+									<li> https://bitcoin.org/</li>
+									<li> https://www.ethereum.org/</li>
+									<li> https://www.meteor.com/</li>
+									<li> http://truffleframework.com/</li>
+									<li> https://github.com/CollectionFS/Meteor-CollectionFS</li>
+								</ol>
 							</div>
 						</section>
 					</article>
