@@ -52,43 +52,86 @@
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h2>a.Unit and integration testing</h2>
+								<h2>Unit testing</h2>
 								<p>To perform our testing, we used tools that are built in the frameworks we are already using.</p>
+								<h4>Smart contracts</h4>
+								<p>Truffle advices the use of Mocha and Chai for unit tests of smart contracts [1]. We have written tests to confirm our smart contracts behaves as expected, and this has helped find some bugs, related to signing a document twice for example. In the last stage, all the tests passed.
+								<br>
+								Example of a set of tests:
+								<img src="images/testing1.png">
+								</p>
+								<h4>Model/ Database</h4>
+								<p>Chai was also used to assert that our queries are working well</p>
+								<h2>Integration testing</h2>
+								<p>Because our web app’s functions directly integrates different components (database queries, web3 calls to testRPC…), it was possible to do some integration testing with chai as well. We faced some difficulties because of the client/server strict separation with meteor, and hence some functionalities couldn’t be tested.</p>
+								<h2>User Acceptance Testing </h2>
 
-								<h3>Smart contracts</h3>
-								<p>Truffle advocates the use of Mocha and Chai for unit tests of smart contracts [1]. We have written tests to confirm our
-								smart contracts behaves as expected, and this has helped find some bugs, related to signing a document twice for example.
-								In the last stage, all the tests passed.
+								<table style="width:90%; margin-left:5%;">
+								  <tr>
+								    <th#</th>
+								    <th>Test case</th>
+								    <th>Users</th>
+								    <th>Description</th>
+								    <th>Result</th>
+								  </tr>
+								  <tr>
+								    <td>1</td>
+								    <td>Document upload</td>
+								    <td>Matineh Akhlaghinia (user)</td>
+								    <td>Matineh uploads a document.She sees it in her list of documents</td>
+								    <td>Success</td>
+								  </tr>
+								  <tr>
+								    <td>2</td>
+								    <td>Document signature</td>
+								    <td>Matineh Akhlaghinia (user), Faiz Abdul (institution)</td>
+								    <td>Matineh uploads a document, and requests faiz to sign it. Faiz receives the request and signs it. Matineh’s dashboard shows the document has been signed by Faiz.</td>
+								    <td>Success</td>
+								  </tr>
+								  <tr>
+								    <td>3</td>
+								    <td>Checking document's authenticity</td>
+								    <td>Emily Mears</td>
+								    <td>Emily enters to the authenticity checking portal.She uploads the document signed by Faiz and uploaded by Matin in Testcase 1. She views that Faiz has signed the document</td>
+								    <td>Success</td>
+								  </tr>
+								  <tr>
+								    <td>4</td>
+								    <td>Not signing a document</td>
+								    <td>Reema Puredath, Faiz Abdul</td>
+								    <td>Reemma signs in, upload a document, and requests Faiz to sign the document. Faiz deletes the document without signing it. She uploads the document to the authenticity checking portal. She views the document hasn’t been signed by anyone.</td>
+								    <td>Success</td>
+								  </tr>
+								  <tr>
+								    <td>5</td>
+								    <td>Multiple signatures</td>
+								    <td>Reemma Puredath (user), Faiz Abdul (institution), Marco Rudilosso (institution)</td>
+								    <td>Same as test case 1, but with multiple signatures.</td>
+								    <td>Success</td>
+								  </tr>
+								  <tr>
+								    <td>6</td>
+								    <td>Uploading a document several times</td>
+								    <td>Reemma Puredath (user), Faiz Abdul (user), Marco Rudilosso (institution)</td>
+								    <td>Faiz and Reemma upload the same document. Marco receives two separate requests and signs the documents</td>
+								    <td>Success</td>
+								  </tr>
+								  <tr>
+								</table>
+								<h2>Feedback from users</h2>
+								<h4>Matineh Akhlaghina, Computer Science Student</h4>
+								<p>"The app is very useful for me, as I’ve wasted a lot of time to get my document notarised. It looks quite straightforward, and fits well with the blockchain technology’s aim. I would definitely use it".</p>
+
+								<h4>Joseph Sapharradoj, Mechanical Engineering student.</h4>
+								<p>"The website looks nice and appealing, and the features would really helped me. I’m not sure whether this can be implemented, but I would suggest to have email notification in the future."</p>
+
+								<h4>Laetitia Leven, Management Science student.</h4>
+								<p>“The idea is simple yet extremely helpful. It actually made me understand blockchain. Regarding the web app itself, it is very simple and easy to understand, which means that non-technical users won’t suffer to know what’s happening.</p>
+
+								<h2>Feedback from client</h2>
+								<h2>Reference</h2>
 								<p>[1] https://truffle.readthedocs.io/en/latest/getting_started/testing/</p>
-								<p>Example of a set of tests:</p>
-								<img alt="" src="images/testing.png" style="width:80%; height:80%; margin-left:10%; margin-right: 10%; margin-bottom: 0.5em;">
-
-								<h3>Model / Database<</h3>
-								<p>Chai was also used to assert that our queries are working well.</p>
-								<p>&nbsp;</p>
-
-								<h3>Integration testing</h3>
-								<p>Because our web app&rsquo;s functions directly integrates different components (database queries, web3 calls to
-								testRPC&hellip;), it was possible to do some integration testing with chai as well. We faced some difficulties because
-								of the client/server strict separation with meteor, and hence some functionalities couldn&rsquo;t be tested.</p>
-								<p>&nbsp;</p>
-
-								<h2>b.User acceptance testing</h2>
-								<h3>User feedback</h3>
-								<img alt="" src="images/user_testing.png" style="float:left; width:59%; height:59%; margin-right:1%; margin-bottom: 0.5em;">
-								<p>Matineh Akhlaghina, Computer Science student:</p>
-								<p>'The app is very useful for me, as I've wasted a lot of time to get my document notarised. It looks quite straightforward,
-								and fits well with the blockchain technology's aim. I would definitely use it.''</p>
-								<p>Joseph Sapharradoj, Mechanical Engineering student:</p>
-								<p>'The website looks nice and appealing, and the features would really helped me. I'm not sure whether this can be
-								implemented, but I would suggest to have email notification in the future.''</p>
-								<p>Laetitia Leven, Management Science student:</p>
-								<p>'The idea is simple yet extremely helpful. It actually made me understand blockchain. Regarding the web app itself, it
-								is very simple and easy to understand, which means that non-technical users won;t suffer to know what;s happening.''</p>
-								<p>&nbsp;</p>
-
-								<h3>Client feedback</h3>
-								<p>&nbsp;</p>
+								
 							</div>
 						</section>
 					</article>
