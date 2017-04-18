@@ -45,63 +45,92 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
-								<h3>MoSCoW</h3>
-								<p>Because of the disruptive and challenging nature of our project, as well as the very general brief we got at the beginning of the year, our requirements took a lot of time to become clear. However, we believe they now describe the general behaviour of the software we want to build.</p>
-									<h5 style="margin-top:4%;">Must have</h5>
-										<li>Be able to upload a document (a hasht to it) to the blockchain</li>
-										<li>
-											Be able to somehow sign documents on the blockchain (with an abstraction of transactions for example)
-										</li>
-										<li>
-											Be able to verify the signatures of the document
-										</li>
-										<li>
-											User authentication with usernames and passwords
-										</li>
-									<h5 style="margin-top:4%;">Should have</h5>
-										<li>
-											Have two user interfaces: one for the regular users who want their documents authenticated, the other for institutions who have the power to legalise dosuments.
-										</li>
-										<li>
-											Documents can be signed by more than one person
-										</li>
-										<li>
-											Very smooth and easy navigation
-										</li>
-									<h5 style="margin-top:4%;">Could have</h5>
-										<li>
-											Open the API to a developer community, such that anyone who comes up with a future requirement could also have access to these documents (Open source project)
-										</li>
-										<li>
-											Automatically implement a piece of code (e.g. release funds) once a document is legalised / signed
-										</li>
-									<h5 style="margin-top:4%;">Won't have</h5>
-									<li>
-										Only predetermined institutions can legalise documents (it's hard to verify their identity otherwise)
-									</li>
-								</br>
 
-								<h3>Personas</h3>
-									<img src="images/persona1.png" style="width:60%; margin-left:5%; margin-bottom:5%">
-									<img src="images/persona2.png" style="width:60%; margin-left:5%">
-								<h3>Scenarios</h3>
-									<p>One of the scenarios we wrote is the following: </p>
-									<p>
-										1-Nadine has a scholarship at UCL and receives funds from the Jordanian government. She needs to authenticate her student of statement status by asking UCL to sign the paper. However, the process is not that simple and she has to go through many steps before receiving any funds. It is expensive and takes too long. </br>
-										2-However, Nadine has an idea. She decides to use BlockDocs to make the process quicker and easier. </br>
-										3-She uploads her student of statement status to the website and sends a signature request to UCL. </br>
-										4-After UCL signs the document she can send it to the Jordanian government that can be sure that the document is authentic.</p>
+								<h2>a. Background of the project</h2>
+								<p>Our project is based on the following question: what other applications or processes can be greatly improved by the
+								implementation of a Blockchain? After an intensive brainstorming period in which we came up with and reviewed different ideas,
+								our team has settled upon one single idea which our client approved and appeared to be fond of.</p>
+								<p>The notarisation and legalisation of a document can require vast amounts of paperwork, effort and most importantly, time.
+								Taking the same exact document through a whole chain of tertiary parties is not only counterproductive, but it can also be
+								avoided entirely through a blockchain based authentication system.</p>
 
-								<h3>Sketches and Storyboard</h3>
-								<img src="images/scenario.pdf" style="width:50%">
-								<h3>Use Cases</h3>
-								<img src="images/usercases.pdf" style="width:90%;">
-								<h3>Prototype</h3>
-								<p>While considering alternatives for the developer platforms we felt that mobile applications are not very often trusted for operations dealing with confidential documents. Hence, we decided to build a web app. </p>
-								<p><b>The regular user portal</b></p>
-								<img src="images/prototype1.png" style="width:50%; margin-left:5%">
-								<p style="margin-top:4%;"><b>Signing authority portal</b></p>
-								<img src="images/prototype2.png" style="width:50%; margin-left:5%">
+								<h2>b. The clients</h2>
+								<p>Atos is one of the biggest actors in the digital services companies worldwide. Its turnover in 2015 was of 11 billions euros
+								and employs approximately 100 000 employees in 72 countries including France where Atos is the principal secure online payment
+								service provider for businesses via its worldwide subsidiary company. The group is the Cloud leader in Europe.</p>
+								<p>The activities at Atos focus on four principal jobs:</p>
+								<ul>
+								<li>Consulting &amp; Technology Services &amp; Systems Integration</li>
+								<li>Outsourcing</li>
+								<li>Transactional services (including payment on the Internet) affiliated with Worldline</li>
+								<li>Cloud, big data and cybersecurity</li>
+								</ul>
+								<p>The group is the global partner of the Olympic games since 1992 and counts among its clients large international accounts
+								in all sectors of activity.</p>
+
+								<h2>c. Problem statement</h2>
+								<p>Notarising and legalising documents can be tedious. Very often, documents that are issued in a country and are required
+								to be used in another one require to pass through a long chain of stamps and signatures, including those of a Notary Public,
+								the Ministry of Foreign Affairs, and the respective embassy.</p>
+								<p>We can establish an analogy between verifying the authenticity of the document and verifying bitcoin transactions or ethereum
+								smart contracts. If the blockchain can help in solving the second problem, then it can also eventually help in fixing the
+								first one. In fact, our application makes it possible to upload both the reference to a document and its signatures to the
+								blockchain.</p>
+
+								<h2>d. Requirement gathering</h2>
+								<p>To gather requirements, we first explored Blockchains possible fields of application. Once we were satisfied with our idea,
+								we listed out a set of requirements based on how the current notarisation process is functioning. With the help of our client
+								and through the interviews we have taken, we managed to validate that set of requirements and structure it by the MoSCoW
+								standards. Furthermore, we also envisioned personas and sketched out storyboards to help both us and our client to better
+								understand our ideas.</p>
+
+								<h2>e. Personas</h2>
+								<img alt="" src="images/persona_1.png" style="float:left; width:49%; height:49%; margin-right: 1%; margin-bottom: 0.5em;">
+								<img alt="" src="images/persona_2.png" style="float:right; width:49%; height:49%; margin-left: 1%; margin-bottom: 0.5em;">
+								<p style="clear: both;">
+								<h2>f. Storyboard and Scenario</h2>
+								<img alt="" src="images/storyboard.png" style="float:left; width:49%; height:49%; margin-right: 1%; margin-bottom: 0.5em;">
+								<p>One of the scenarios we wrote is the following:</p>
+								<p>1-Nadine has a scholarship at UCL and receives funds from the Jordanian government. She needs to authenticate her student of
+									 statement status by asking UCL to sign the paper. However, the process is not that simple and she has to go through many steps
+									  before receiving any funds. It is expensive and takes too long.</p>
+								<p>2-However, Nadine has an idea. She decides to use BlockDocs to make the process quicker and easier.</p>
+								<p>3-She uploads her student of statement status to the website and sends a signature request to UCL.</p>
+								<p>4-After UCL signs the document she can send it to the Jordanian government that can be sure that the document is
+								authentic.</p>
+
+								<h2>g. MoSCoW</h2>
+								<p>Because of the disruptive and challenging nature of our project, as well as the very general brief we got at the beginning
+								of the year, our requirements took a lot of time to become clear. However, we believe they now describe the general behaviour
+								of the software we want to build.</p>
+								<h3><strong>must</strong></h3>
+								<ul>
+								<li>Be able to upload a document (a hasht to it) to the blockchain</li>
+								<li>Be able to somehow sign documents on the blockchain (with an abstraction of transactions for example)</li>
+								<li>Be able to verify the signatures of the document</li>
+								<li>User authentication with usernames and passwords</li>
+								</ul>
+								<h3><strong>should</strong></h3>
+								<ul>
+								<li>Have two user interfaces: one for the regular users who want their documents authenticated, the other for institutions
+									who have the power to legalise documents</li>
+								<li>Documents can be signed by more than one person</li>
+								<li>Very smooth and easy navigation</li>
+								</ul>
+								<h3><strong>could</strong></h3>
+								<ul>
+								<li>Open the API to a developer community, such that anyone who comes up with a future requirement could also have access to
+									these documents (open source project)</li>
+								<li>Automatically implement a piece of code (e.g. release funds) once a document is legalised / signed</li>
+								</ul>
+								<h3><strong>won't</strong></h3>
+								<ul>
+								<li>Only predetermined institutions can legalise documents (it's hard to verify their identity otherwise)</li>
+								</ul>
+
+								<h2>h. Use Cases</h2>
+								<img alt="" src="images/use_cases.png" style="width:100%; height:80%;">
+
 							</div>
 						</section>
 					</article>

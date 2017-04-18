@@ -51,13 +51,78 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
-<!-- THIS IS WHERE YOU ADD TEXT-->
-								<h2>Title</h2>
-								<h4>Subtitle</h4>
-								<img src="" style="width:15%" align="right">
-								<p>Paragraph</p>
+								<h2><strong>a.&nbsp;&nbsp; </strong><strong>Summary of achievements</strong></h2>
+								<h3><strong>Requirements, status and contributors</strong></h3>
+								<img alt="" src="images/requirements.png" style="width:80%; height:80%; margin-left:10%; margin-right:10%; margin-bottom: 6em;">
+								<h3><strong>Challenges and how we solved them</strong></h3>
 
+								<h4>● Challenge #1 - Unknown technologies</h4>
+								<p>Our initial project consisted of coming up with an original idea related to blockchain. Not having an idea about what
+								blockchain is yet needing to come up with a project was really challenging. The only way to overcome this challenge was to do a
+								lot of research, and choose the final idea a bit late in the timeline</p>
+								<p>&nbsp;</p>
 
+								<h4>● Challenge #2 - debugging smart contracts</h4>
+								<p>Debugging smart contract solidity code was quite challenging, as it should be deployed on testRPC before any testing can be
+								done, and printing variable values is hard in intermediate stages of the code. That&rsquo;s because the technology is quite
+								recent.</p>
+								<p>&nbsp;</p>
+								<p>To overcome this problem, we have divided our code into very specific small functions, and the return value of each could be
+								printed. This has helped us locate the bugs.</p>
+								<p>&nbsp;</p>
+
+								<h4>● Challenge #3 - Keeping the database and the blockchain is sync</h4>
+								<p>This is a very hard task, and we needed to design our website architecture carefully, especially that we are dealing with
+								sensitive data.</p>
+								<p>&nbsp;</p>
+								<p>After failing in solving the problem, we have overcome the challenge by designing our website in way that no wrong/corrupted
+								data can be written to the blockchain, and where decisive and important functions would check the blockchain directly without
+								relying on the mongoDB database. In other terms, we segregated the important data from the non-important ones.</p>
+								<p>&nbsp;</p>
+
+								<h4>● Challenge #4 - Reducing computation in the smart contracts, as it's expensive</h4>
+								<p>Computation in the smart contracts costs &ldquo;gas&rdquo;, which means money if the website was deployed on the the true
+								blockchain network. To minimise the gas spending, we have moved all the expensive computation outside the smart contract
+								(e.g. calculating the hash of a document)</p>
+								<p>&nbsp;</p>
+
+								<h4>● Challenge #5 &ndash; Slow querying of the blockchain/smart contract</h4>
+								<p>Because asking for information from the blockchain is quite slow, and we sometimes need instant information to fill in a
+								table with a big number of documents, we needed to find an alternative way to get data. That&rsquo;s why we initially created
+								the mongoDB database as a &ldquo;proxy&rdquo; to the info in the blockchain, and which be queried faster.</p>
+								<p>&nbsp;</p>
+
+								<h3>Incomplete features and bugs</h3>
+								<p>All the main features were successfully implemented. The only functions that could have been implemented would have been
+								email notifications, and an automatic action specified by the user which happens once the document is signed.</p>
+								<p>Some minor bugs still exist:</p>
+								<ul>
+								<li>Performing actions very fast might mean that some program parts are not executed</li>
+								<li>Front end elements not being well responsive</li>
+								<li>No type checking: e.g. A non valid email can be entered in an email field</li>
+								</ul>
+								<p>We considered that these items were not required for our app prototype, and fixing these small bugs is relatively time
+								consuming and wouldn't allow us to have a secure and functioning system.</p>
+								<p>&nbsp;</p>
+								<h3><strong>Work package distribution</strong></h3>
+								<img alt="" src="images/work_packages.png" style="width:80%; height:80%; margin-left:10%; margin-right:10%; margin-bottom: 6em;">
+								<h2><strong>b.&nbsp;&nbsp; </strong><strong>Critical evaluation of the project</strong></h2>
+								<img alt="" src="images/evaluation.png" style="width:80%; height:80%; margin-left:10%; margin-right:10%; margin-bottom: 6em;">
+								<h2><strong>c.&nbsp;&nbsp;&nbsp; </strong><strong>Future work</strong></h2>
+								<p>Since we were allocated a disruptive project with a novel technology and not a lot of resources, we are aware that our app
+								can be improved in many ways. Our future work would include:</p>
+								<ul>
+								<li>Fixing the bugs stated earlier</li>
+								<li>Moving the smart contract to a real ethereum network rather than testRPC</li>
+								<li>Deploying the web app without affecting its speed and efficiency</li>
+								</ul>
+								<p>Later, we can move on to adding new features, such as:</p>
+								<ul>
+								<li>Adding notifications and an authentication system</li>
+								<li>Making the service for money (as transactions on the blockchain are not for free)</li>
+								</ul>
+								<p>&nbsp;</p>
+								<p>&nbsp;</p>
 							</div>
 						</section>
 					</article>
