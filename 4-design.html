@@ -110,7 +110,7 @@
 
 								<h4>Design decisions:</h4>
 								<ul>
-									<li>In accordance with mongoDB’s documentation advise about one to many relationships (one document might have multiple signature)[https://www.mongodb.com/blog/post/6-rules- of-thumb- for-mongodb- schema-design-part- 1], and instead of having arrays of signatures in documentsdb, we decided to create another collection: toSign. Each entry in this last database holds a reference of the document that is/should be signed.</li>
+									<li>In accordance with mongoDB’s documentation advise about one to many relationships (one document might have multiple signature)[1], and instead of having arrays of signatures in documentsdb, we decided to create another collection: toSign. Each entry in this last database holds a reference of the document that is/should be signed.</li>
 									<li> Instead of having two collections for normal users and institutions accounts’ respectively, we decided to have one collection with a flag entry to mark whether a user is an institution or not. This decision was made to be able to use Meteor’s very own authentication system</li>
 								</ul>
 								<div align="center">
@@ -120,7 +120,7 @@
 								<p>Our smart contract, written is solidity, mainly maintains a hashmap, which hashes a document reference to details about this document. The most important details about this document are: its owner and its signatories, both of them having the format of the public key of an ethereum wallet (ie their ethereum username). The document reference is its sha3 hash.</p>
 
 								<h4>Web3.js</h4>
-								<p>We used this tool to calculate the sha3 hash of a pdf document (*), and to trigger the smart contract lying in testRPC (referenced by its address and abi).[1]</p>
+								<p>We used this tool to calculate the sha3 hash of a pdf document, and to trigger the smart contract lying in testRPC (referenced by its address and abi).[2]</p>
 								<br></br><br></br>
 
 								<h2>b. Design Patterns</h2>
@@ -132,7 +132,7 @@
 								<br>- Displaying the names of institutions who signed a document</p>
 
 								<h4>Model-View-Controler</h4>
-								<p>The Model – View – Controller (MVC) design pattern divides an application into three separate, but interconnected parts, just like its names says.[2] Using meteor has, indirectly, led us to implementing this design with our app. Each page has a view (.html) code which defines its look, a controller (.js) code which accepts input and interactions and executes commands accordingly while the data logic, the model, uses the Meteor libraries.</p>
+								<p>The Model – View – Controller (MVC) design pattern divides an application into three separate, but interconnected parts, just like its names says.[3] Using meteor has, indirectly, led us to implementing this design with our app. Each page has a view (.html) code which defines its look, a controller (.js) code which accepts input and interactions and executes commands accordingly while the data logic, the model, uses the Meteor libraries.</p>
 
 								<h4>Adapter</h4>
 								<p>This design pattern has been mainly used to solve the following problem. The
@@ -195,7 +195,7 @@
 								web3). It maps the unique reference of the document to its owners’ id (the
 								user logged in) and the institutions who signed on it (0 for now)</li>
 								<li>An entry in the documentsdb collection is added, corresponding to the
-								document uploaded[3]</li>
+								document uploaded[4]</li>
 								<li>The document is also added to the filesystem</li>
 								</ul>
 								<h4>Requesting a signature</h4>
@@ -216,6 +216,7 @@
 
 								<h2>e. References</h2>
 								<ol>
+									<li>MongoDB [Internet]. 2017 [cited 24 April 2017]. Available from: <a href="https://www.mongodb.com/blog/post/6-rules- of-thumb- for-mongodb- schema-design-part- 1">https://www.mongodb.com/blog/post/6-rules- of-thumb- for-mongodb- schema-design-part- 1</a></li>
 									<li>ethereum/web3.js [Internet]. GitHub. 2017 [cited 24 April 2017]. Available from: <a href="https://github.com/ethereum/web3.js/">https://github.com/ethereum/web3.js/</a></li>
 									<li>Model-View-Controller [Internet]. Developer.apple.com. 2017 [cited 24 April 2017]. Available from: <a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html">https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html</a></li>
 									<li>CollectionFS/Meteor-CollectionFS [Internet]. GitHub. 2017 [cited 24 April 2017]. Available from: <a href="https://github.com/CollectionFS/Meteor-CollectionFS">https://github.com/CollectionFS/Meteor-CollectionFS</a></li>
