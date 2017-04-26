@@ -63,7 +63,7 @@
 								<p><b>Why does Blockchain fit our project?</b><p>
 								<p>We believe that currently, the notarisation process is long, tedious and quite expensive, even more so when thinking about documents that need to be exchanged between parties from different countries. A blockchain based notary application would fit perfectly in this scenario to make the process go a lot faster, cheaply. Just as Bitcoin transactions can be verified using Blockchain, so can documents be authenticated via the same means.</p>
 
-								<img alt="" src="images/bitcoin.png" style="float:right; width:15%;">
+								<img alt="" src="images/bitcoin.png" style="float:left; width:15%;">
 								<h4>Bitcoin</h4>
 								<p>Bitcoin is a cryptographic currency; it is a payment system that allows making transactions directly without getting a third party involved in the exchange. In other words, it is a peer-to-peer connection. The transactions are stored in the blockchain, which verifies that the money is not in two hands at once. The system works without a central unit or a unique administrator: it is decentralized.[2]</p>
 
@@ -72,7 +72,10 @@
 								<p>Ethereum is a public blockchain based distributed computing platform, featuring smart contract functionality. Smart contracts are objects which contain functions and variables and which can interact with other contracts, make decisions, store data and send ether (Ethereum cryptocurrency).[3]</p>
 
 								<h4>Ehteruems advantages over Bitcoin and why is it suitable for our app</h4>
-								<p>We decided to go with Ethereum because it’s built in smart contract features is way more advantageous for the purpose of our system. Through smart contracts, we can authenticate the signatures on a document.</p>
+								<p>We decided to go with Ethereum because it’s built in smart contract features are more advantageous for the purpose of our system.
+								Through smart contracts, we can authenticate the signatures on a document once its reference is uploaded on the blockchain and, eventually,
+								trigger certain actions such as a money transfer or the start of another smart contract. Moreover, Ethereum's main feature is to deploy contracts,
+								seconded by its transaction recording feature.</p>
 								<br></br><br></br>
 
 								<h2>b. Programming languages, tools and libraries<h2>
@@ -81,23 +84,23 @@
 								<h4>MeteorJS, an alternative to Node</h4>
 								<p>We decided to use MeteorJS as the main development platform. Meteor is a new technology which functions as a full stack platform, offering simplicity, speed and reactivity. Meteor’s built in package system made it very easy to add additional items to our system such as user accounts through the accounts-ui and accounts-password packages, a documents database through collectionFS, all just by typing in a few commands on the terminal.[4]</p>
 
-								<img alt="" src="images/truffle.png" style="float:right; width:10%;">
+								<img alt="" src="images/truffle.png" style="float:left; width:10%; margin-right:2%">
 								<h4>Truffle - Ethereum development framework</h4>
 								<p>While reading through the forums for an Ethereum development environment, we quickly discovered that Truffle was suggested by many as being the leading technology when it comes to developing and deploying smart contracts, and, therefore, it became our ethereum framework of choice.[5]</p>
 
 								<h4>HTML5, CSS3, Javascript - The Front End</h4>
 								<p>We decided to stick with the basics of front end development to not overcomplicate the scope of our project. During development, we also tried using ReactJS, but after a while we ended up dropping it because of the multitude of issues that it caused in relation to routing, document uploading and others. Firstly, Reacts capabilities proved promising, but given the fact that Meteor is a relatively new platform and so is React, some conflicting issues made us decided to stick with basic Javascript</p>
 
-								<img alt="" src="images/mongodb.png" style="float:right; width:30%;">
+								<img alt="" src="images/mongodb.png" style="float:left; width:20%; margin-right:2%;">
 								<h4>MongoDB with CollectionFS - The Back End</h4>
 								<p>The Meteor platform has a built in mini-mongo database system, so it was easy for us to make use of it out of the box. CollectionFS is a meteor package/library that enabled us to upload and view documents in the MongoDB instance created from the start of the application.[6]</p>
 
 								<h4>Testrpc</h4>
-								<p>Testrpc is based on Ethereum client based, and is a Node.js, it used for testing and development. It simulates complete client behavior and make Ethereum applications faster. It has all the popular RPC functions and features (such as events) and can be run deterministically to make development easier.[7]</p>
+								<p>Testrpc is a Node.js based Ethereum client used for testing and development. It simulates complete client behavior and makes Ethereum applications faster. It has all the popular RPC functions and features (such as events) and can be run deterministically to make development easier.[7]</p>
 
 								<h4>Web3.js</h4>
 								<p>This JavaScript API is Ethereum compatible, it implements the generic JSON RPC specification.
-								We used this tool to calculate the sha3 hash of a pdf document (*), and to trigger the smart contract lying in testRPC (referenced by its address and abi).[8]</p>
+								We used this tool to calculate the sha3 hash of a pdf document, and to trigger the smart contract lying in testRPC (referenced by its address and abi).[8]</p>
 								<br></br><br></br>
 
 								<h2>c. Summary of Final Decision</h2>
