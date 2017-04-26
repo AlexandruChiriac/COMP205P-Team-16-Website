@@ -102,7 +102,6 @@
 									<ul>
 									<li>An entry is created in this database whenever a user requests of a party’s signature. This party is referenced to by the institution field, and multiple requests would generate multiple entries. The id of the document to be signed is in the document_id field. </li>
 									<li> Not having a reference to the design requester is a design decision. In fact, the signature on a document should solely depend in its content (in the pdf). Hence, if two people own two copies of the same document, and one of them is authentic then the other one is authentic as well. </li>
-
 									<li> The signed field is first instantiated to 0, meaning the document has been
 									requested to be signed. Once the party signs the document, the signature is
 									done on the blockchain (in our smart contract), and the signed field becomes 1</li>
@@ -117,10 +116,10 @@
 								<img src="images/db.png" style="width:70%"></div>
 
 								<h4>a.2 Smart contract</h4>
-								<p>Our smart contract, written is solidity, mainly maintains a hashmap, which hashes a document reference to details about this document. The most important details about this document are: its owner and its signatories, both of them having the format of the public key of an ethereum wallet (ie their ethereum username). The document reference is its sha3 hash.</p>
+								<p>The smart contract we have used[2], written is solidity, mainly maintains a hashmap, which hashes a document reference to details about this document. The most important details about this document are: its owner and its signatories, both of them having the format of the public key of an ethereum wallet (ie their ethereum username). The document reference is its sha3 hash.</p>
 
 								<h4>a.3 Web3.js</h4>
-								<p>We used this tool to calculate the sha3 hash of a pdf document, and to trigger the smart contract lying in testRPC (referenced by its address and abi).[2]</p>
+								<p>We used this tool to calculate the sha3 hash of a pdf document, and to trigger the smart contract lying in testRPC (referenced by its address and abi).[3]</p>
 								<br></br><br></br>
 
 								<h2>b. Design Patterns</h2>
@@ -132,7 +131,7 @@
 								<br>- Displaying the names of institutions who signed a document</p>
 
 								<h4>Model-View-Controler</h4>
-								<p>The Model – View – Controller (MVC) design pattern divides an application into three separate, but interconnected parts, just like its names says.[3] Using meteor has, indirectly, led us to implementing this design with our app. Each page has a view (.html) code which defines its look, a controller (.js) code which accepts input and interactions and executes commands accordingly while the data logic, the model, uses the Meteor libraries.</p>
+								<p>The Model – View – Controller (MVC) design pattern divides an application into three separate, but interconnected parts, just like its names says.[4] Using meteor has, indirectly, led us to implementing this design with our app. Each page has a view (.html) code which defines its look, a controller (.js) code which accepts input and interactions and executes commands accordingly while the data logic, the model, uses the Meteor libraries.</p>
 
 								<h4>Adapter</h4>
 								<p>This design pattern has been mainly used to solve the following problem. The
@@ -195,7 +194,7 @@
 								web3). It maps the unique reference of the document to its owners’ id (the
 								user logged in) and the institutions who signed on it (0 for now)</li>
 								<li>An entry in the documentsdb collection is added, corresponding to the
-								document uploaded[4]</li>
+								document uploaded[5]</li>
 								<li>The document is also added to the filesystem</li>
 								</ul>
 								<h4>Requesting a signature</h4>
@@ -217,6 +216,7 @@
 								<h2>e. References</h2>
 								<ol>
 									<li>MongoDB [Internet]. 2017 [cited 24 April 2017]. Available from: <a href="https://www.mongodb.com/blog/post/6-rules- of-thumb- for-mongodb- schema-design-part- 1">https://www.mongodb.com/blog/post/6-rules- of-thumb- for-mongodb- schema-design-part- 1</a></li>
+									<li>splix/toporick [Internet]. GitHub. 2017 [cited 26 April 2017]. Available from: <a href="https://github.com/splix/toporick"></a>ttps://github.com/splix/toporick</li>
 									<li>ethereum/web3.js [Internet]. GitHub. 2017 [cited 24 April 2017]. Available from: <a href="https://github.com/ethereum/web3.js/">https://github.com/ethereum/web3.js/</a></li>
 									<li>Model-View-Controller [Internet]. Developer.apple.com. 2017 [cited 24 April 2017]. Available from: <a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html">https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html</a></li>
 									<li>CollectionFS/Meteor-CollectionFS [Internet]. GitHub. 2017 [cited 24 April 2017]. Available from: <a href="https://github.com/CollectionFS/Meteor-CollectionFS">https://github.com/CollectionFS/Meteor-CollectionFS</a></li>
